@@ -1,0 +1,119 @@
+<div class="hero">
+    <%= @recipe.title %>
+</div>
+
+<div id="countdown">
+  <span id="counter">
+    <%= @recipe.brewtime %>
+  </span>
+
+  <span id="control">start</span>
+
+</div>
+
+
+
+
+
+
+
+<div class="ingredients">
+  <div class="coffee">
+      <h3>Coffee:</h3>
+      <h4><%= @recipe.coffee %> grams</h4>
+  </div>
+
+  <div class="water">
+      <h3>Water:</h3>
+      <h4><%= @recipe.water %>ml</h4>
+  </div>
+
+  <div class="brewtime">
+    <h3>Brewtime:</h3>
+    <h4><%= @recipe.brewtime %> seconds</h4>
+  </div>
+
+</div>
+
+<div class="source">
+  <h4><%= @recipe.source %></h4>
+</div>
+
+<div class="links">
+  <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+  <%= link_to 'Back', recipes_path %> |
+  <%= link_to 'Destroy', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+
+<script>
+
+var timeoutID;
+var timeoutA;
+var timeoutB
+var count = 0;
+var brewtime = <%= @recipe.brewtime %>;
+var audio = new Audio("<%= asset_path('ding.mp3') %>");
+
+
+
+window.setCorrectingInterval = ( function( func, delay ) {
+    var instance = { };
+
+    function tick( func, delay ) {
+        if ( ! instance.started ) {
+            instance.func = func;
+            instance.delay = delay;
+            instance.startTime = new Date().valueOf();
+            instance.target = delay;
+            instance.started = true;
+
+            timeoutA = setTimeout( tick, delay );
+        } else {
+            var elapsed = new Date().valueOf() - instance.startTime,
+            adjust = instance.target - elapsed;
+
+            instance.func();
+            instance.target += instance.delay;
+
+            timeoutB = setTimeout( tick, instance.delay + adjust );
+        }
+    };
+
+    return tick( func, delay );
+} );
+
+$("#countdown").one( "click", function() {
+  timeoutID = window.setTimeout(slowAlert, (brewtime * 1000));
+
+  document.getElementById("countdown").style.background = "#52B2CF";
+  document.getElementById("countdown").style.color = "#FAE1DF";
+
+  function slowAlert() {
+    audio.play();
+    document.getElementById("counter").textContent="Ready";
+    document.getElementById("countdown").style.background = "#DE3C4B";
+    document.getElementById("countdown").style.color = "#130303";
+    clearInterval(intervalID);
+    clearTimeout(timeoutB);
+    clearTimeout(timeoutA);
+  }
+
+  var startTime = Date.now();
+  intervalID = setCorrectingInterval( function() {
+    brewtime -= 1;
+    console.log( ( Date.now() - startTime ) + 'ms elapsed' );
+    document.getElementById('counter').innerHTML = brewtime;
+  }, 1000);
+
+  document.getElementById("control").textContent="Reset";
+
+  if(brewtime == 0) {
+    document.getElementById("counter").textContent="Press";
+  }
+
+})
+
+
+
+
+</script>

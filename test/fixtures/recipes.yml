@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  brewtime: 1
+  coffee: 1
+  water: 1
+
+two:
+  title: MyString
+  brewtime: 1
+  coffee: 1
+  water: 1

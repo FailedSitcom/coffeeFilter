@@ -1,0 +1,121 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title, .links {
+  @include span-columns(12);
+  text-align: center;
+}
+
+#countdown {
+  margin: 0 auto;
+  width: 290px;
+  height: 290px;
+  margin-top: 0.5em;
+  text-align: center;
+  background: $red;
+  border-radius: 50%;
+  padding: 6em;
+
+  @include media($tablet) {
+    width: 300px;
+    height: 300px;
+  }
+  @include media($mobile) {
+    width: 320px;
+    height: 320px;
+  }
+
+  #counter {
+    font-size: 3.157em;
+    @include span-columns(12);
+  }
+
+  #control {
+    font-size: 2.074em;
+  }
+}
+
+.ingredients {
+  text-align: center;
+  @include span-columns(6);
+  @include shift(3);
+
+  @include media($tablet) {
+    @include span-columns(4);
+    @include shift(1);
+  }
+
+  @include media($mobile) {
+    @include span-columns(3.5);
+    @include shift(0.5);
+  }
+}
+
+.brewtime, .coffee, .water {
+  @include span-columns(4);
+  @include media($tablet) {
+    @include span-columns(2);
+  }
+  @include media($mobile) {
+    @include span-columns(1);
+  }
+}
+
+.source {
+  @include span-columns(12);
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+
+  li {
+    color: $black;
+    text-align: center;
+
+
+    @include span-columns(3);
+    @include omega(4n);
+    @include media($tablet) {
+      @include span-columns(3);
+      @include omega(2n);
+    }
+    @include media($mobile) {
+      @include span-columns(4);
+      @include omega(1n);
+    }
+  }
+}
+
+.recipes {
+  @include span-columns(12);
+}
+
+.recipe {
+  margin: 0.5em;
+  background: $red;
+  padding: 2.5em;
+}
+
+.recipe:hover {
+  background: $blue;
+  color: $white;
+}
+
+.new-recipe {
+  margin: 0.5em;
+  background: $brown;
+
+  padding: 3.5em;
+  a {
+    color: $white;
+  }
+  a:hover {
+    background: $blue;
+  }
+}
+
+.new-recipe:hover {
+  background: $blue;
+}

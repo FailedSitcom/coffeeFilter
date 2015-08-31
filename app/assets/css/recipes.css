@@ -1,0 +1,66 @@
+/*
+Error: Undefined mixin 'span-columns'.
+        on line 6 of /Users/samueldurkin/Documents/Sites/coffeeFilter/app/assets/stylesheets/recipes.scss, in `span-columns'
+        from line 6 of /Users/samueldurkin/Documents/Sites/coffeeFilter/app/assets/stylesheets/recipes.scss
+
+1: // Place all the styles related to the recipes controller here.
+2: // They will automatically be included in application.css.
+3: // You can use Sass (SCSS) here: http://sass-lang.com/
+4: 
+5: .title, .links {
+6:   @include span-columns(12);
+7: }
+8: 
+9: .brewtime, .coffee, .water {
+10:   @include span-columns(2);
+11:   @include media($tablet) {
+
+Backtrace:
+/Users/samueldurkin/Documents/Sites/coffeeFilter/app/assets/stylesheets/recipes.scss:6:in `span-columns'
+/Users/samueldurkin/Documents/Sites/coffeeFilter/app/assets/stylesheets/recipes.scss:6
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:348:in `block in visit_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:98:in `block in with_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:98:in `with_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:430:in `map'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `map'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:20:in `render'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/engine.rb:278:in `render'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/sass_scss.rb:418:in `run'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/base.rb:52:in `parse'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/base.rb:19:in `parse!'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/bin/scss:13:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'span-columns'.\A         on line 6 of /Users/samueldurkin/Documents/Sites/coffeeFilter/app/assets/stylesheets/recipes.scss, in `span-columns'\A         from line 6 of /Users/samueldurkin/Documents/Sites/coffeeFilter/app/assets/stylesheets/recipes.scss\A \A 1: // Place all the styles related to the recipes controller here.\A 2: // They will automatically be included in application.css.\A 3: // You can use Sass (SCSS) here: http://sass-lang.com/\A 4: \A 5: .title, .links {\A 6:   @include span-columns(12);\A 7: }\A 8: \A 9: .brewtime, .coffee, .water {\A 10:   @include span-columns(2);\A 11:   @include media($tablet) {"; }

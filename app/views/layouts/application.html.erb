@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CoffeeFilter</title>
+
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= stylesheet_link_tag    'application', 'http://fonts.googleapis.com/css?family=Courgette|Dosis:400,700' %>
+      <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+  <div class="nav-menu">
+    <%= link_to pages_home_path do  %>
+      <span class="site-title">coffeeFilter</span>
+    <% end %>
+
+    <%= link_to pages_about_path do  %>
+      <span class="about">About</span>
+    <% end %>
+
+    <%= link_to recipes_path do  %>
+      <span class="about">
+        Recipes
+      </span>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, :method => :delete do  %>
+        <span class="login">
+          Logout
+        </span>
+      <% end %>
+    <% else %>
+
+      <%= link_to (new_user_session_path) do %>
+        <span class="login">
+          Login
+        </span>
+      <% end %>
+    <% end %>
+
+  </div>
+
+  <div class="outer-container">
+
+<%= yield %>
+  </div>
+</body>
+</html>

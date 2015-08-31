@@ -1,0 +1,183 @@
+html {font-size: 1em;}
+
+body {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  background: $white;
+}
+
+p {
+  font-family: 'Dosis', sans-serif;
+  margin-bottom: 1.3em;
+  word-spacing: 0.15em;
+  }
+
+h1, h2, h3, h4 {
+  font-family: 'Dosis', sans-serif;
+  margin: 0.4em 0 0.4em;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.157em;
+  @include media($tablet) {
+    font-size: 2.074em;
+  }
+  @include media($mobile) {
+    font-size: 1.602em;
+  }
+}
+
+h2 {
+  font-size: 2.369em;
+  @include media($tablet) {
+    font-size: 1.728em;
+  }
+  @include media($mobile) {
+    font-size: 1.424em;
+  }
+}
+
+h3 {
+  font-size: 1.777em;
+  @include media($tablet) {
+    font-size: 1.44em;
+  }
+  @include media($mobile) {
+    font-size: 1.266em;
+  }
+}
+
+h4 {
+  font-size: 1.333em;
+  @include media($tablet) {
+    font-size: 1.2em;
+  }
+  @include media($mobile) {
+    font-size: 1.125em;
+  }
+}
+
+
+small, .font_small {font-size: 0.75em;}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: $black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu {
+  @include outer-container;
+  background: $black;
+  color: white;
+}
+
+.site-title {
+  color: white;
+  font-family: 'Courgette', cursive;
+  @include span-columns(12);
+  text-align: center;
+  padding: 0.25em 0;
+
+  font-size: 3.157em;
+  @include media($tablet) {
+    font-size: 2.074em;
+  }
+  @include media($mobile) {
+    font-size: 1.602em;
+  }
+}
+
+.about, .login {
+  @include span-columns(4);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1em;
+  background: $blue;
+  color: $black;
+
+  font-size: 1.333em;
+  @include media($tablet) {
+    font-size: 1.2em;
+  }
+  @include media($mobile) {
+    font-size: 1.125em;
+  }
+
+}
+
+.about:hover, .login:hover {
+  color: $white;
+}
+
+.outer-container{
+  @include outer-container();
+}
+
+.page-title {
+  text-align: center;
+}
+
+.hero {
+  text-align: center;
+  font-size: 3.157em;
+  background: $brown;
+  color: $white;
+}
+
+.devise-container {
+
+}
+
+.field {
+  text-align: center;
+  margin: 1em 0;
+  font-size: 1.777em;
+  @include media($tablet) {
+    font-size: 1.44em;
+  }
+  @include media($mobile) {
+    font-size: 1.266em;
+  }
+
+  label {
+
+  }
+
+  input {
+
+    font-size: 1.266em;
+
+  }
+}
+
+.actions {
+
+
+  input {
+
+
+  }
+}
+
+#new_user > div.actions > input[type="submit"] {
+  font-size: 1.777em;
+  @include media($tablet) {
+    font-size: 1.44em;
+  }
+  @include media($mobile) {
+    font-size: 1.266em;
+  }
+}
+
+.about-content {
+  @include span-columns(10);
+  @include shift(1);
+}

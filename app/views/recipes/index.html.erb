@@ -1,0 +1,47 @@
+<div class="hero">
+  Your Recipes
+</div>
+
+<ul class="recipes">
+
+    <% @recipes.each do |recipe| %>
+
+      <li>
+        <%= link_to(recipe) do %>
+          <div class="recipe">
+            <h3><%= recipe.title %></h3>
+            <h4><%= recipe.coffee %> grams</h4>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+    <li>
+      <div class="new-recipe">
+        <h3><%= link_to 'Add Recipe', new_recipe_path %></h3>
+      </div>
+    </li>
+</ul>
+
+
+
+<ul class="recipes">
+
+  <div class="hero">
+    All Recipes
+  </div>
+
+    <% @recipes.each do |recipe| %>
+
+      <li>
+        <%= link_to(recipe) do %>
+          <div class="recipe">
+            <h3><%= recipe.title %></h3>
+            <h4><%= recipe.coffee %> grams</h4>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+
+</ul>
+
+<br>
