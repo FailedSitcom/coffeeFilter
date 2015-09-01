@@ -52,7 +52,7 @@ var timeoutA;
 var timeoutB
 var count = 0;
 var brewtime = <%= @recipe.brewtime %>;
-var audio = new Audio("<%= asset_path('ding.mp3') %>");
+var soundID = "Ding";
 
 
 
@@ -82,17 +82,25 @@ window.setCorrectingInterval = ( function( func, delay ) {
     return tick( func, delay );
 } );
 
+createjs.Sound.registerSound("<%= asset_path('ding.mp3') %>", soundID);
+
 $("#countdown").one( "click", function() {
   timeoutID = window.setTimeout(slowAlert, (brewtime * 1000));
 
   document.getElementById("countdown").style.background = "#52B2CF";
   document.getElementById("countdown").style.color = "#FAE1DF";
 
+
+
   function slowAlert() {
-    audio.play();
+
     document.getElementById("counter").textContent="Ready";
     document.getElementById("countdown").style.background = "#DE3C4B";
     document.getElementById("countdown").style.color = "#130303";
+
+    createjs.Sound.play(soundID);
+
+
     clearInterval(intervalID);
     clearTimeout(timeoutB);
     clearTimeout(timeoutA);
