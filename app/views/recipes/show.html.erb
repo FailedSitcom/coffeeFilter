@@ -52,7 +52,7 @@ var timeoutA;
 var timeoutB
 var count = 0;
 var brewtime = <%= @recipe.brewtime %>;
-var soundID = "Ding";
+var soundID = "Alarm";
 
 
 
@@ -82,44 +82,67 @@ window.setCorrectingInterval = ( function( func, delay ) {
     return tick( func, delay );
 } );
 
-createjs.Sound.registerSound("<%= asset_path('ding.mp3') %>", soundID);
+createjs.Sound.registerSound("<%= asset_path('alarm.mp3') %>", soundID);
 
-$("#countdown").one( "click", function() {
-  timeoutID = window.setTimeout(slowAlert, (brewtime * 1000));
+$("#countdown").click(function() {
 
-  document.getElementById("countdown").style.background = "#52B2CF";
-  document.getElementById("countdown").style.color = "#FAE1DF";
+if (document.getElementById("control").textContent == "start") {
 
 
+    timeoutID = window.setTimeout(slowAlert, (brewtime * 1000));
 
-  function slowAlert() {
+    document.getElementById("countdown").style.background = "#52B2CF";
+    document.getElementById("countdown").style.color = "#FAE1DF";
 
-    document.getElementById("counter").textContent="Ready";
-    document.getElementById("countdown").style.background = "#DE3C4B";
-    document.getElementById("countdown").style.color = "#130303";
+    function slowAlert() {
 
-    createjs.Sound.play(soundID);
+      document.getElementById("counter").textContent="Ready";
+      document.getElementById("countdown").style.background = "#DE3C4B";
+      document.getElementById("countdown").style.color = "#130303";
+
+      createjs.Sound.play(soundID);
 
 
-    clearInterval(intervalID);
-    clearTimeout(timeoutB);
-    clearTimeout(timeoutA);
-  }
+      clearInterval(intervalID);
+      clearTimeout(timeoutB);
+      clearTimeout(timeoutA);
+    }
 
-  var startTime = Date.now();
-  intervalID = setCorrectingInterval( function() {
-    brewtime -= 1;
-    console.log( ( Date.now() - startTime ) + 'ms elapsed' );
-    document.getElementById('counter').innerHTML = brewtime;
-  }, 1000);
+    var startTime = Date.now();
+    intervalID = setCorrectingInterval( function() {
+      brewtime -= 1;
+      console.log( ( Date.now() - startTime ) + 'ms elapsed' );
+      document.getElementById('counter').innerHTML = brewtime;
+    }, 1000);
 
-  document.getElementById("control").textContent="Reset";
+    document.getElementById("control").textContent="reset";
 
-  if(brewtime == 0) {
-    document.getElementById("counter").textContent="Press";
-  }
+    if(brewtime == 0) {
+      document.getElementById("counter").textContent="ready";
+    }
 
-})
+
+    }
+
+    else {
+      $("#countdown").one( "click", function() {
+        document.getElementById("countdown").style.background = "#DE3C4B";
+        document.getElementById("countdown").style.color = "#FAE1DF";
+        document.getElementById("control").textContent="start";
+
+        clearInterval(intervalID);
+        clearTimeout(timeoutB);
+        clearTimeout(timeoutA);
+        clearTimeout(timeoutID);
+
+        brewtime = <%= @recipe.brewtime %>;
+        document.getElementById("counter").textContent="<%= @recipe.brewtime %>";
+
+      })
+    }
+
+  })
+
 
 
 
