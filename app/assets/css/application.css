@@ -121,7 +121,7 @@ body {
     .about, .login {
       font-size: 1.125em; } }
 
-.about:hover, .login:hover {
+.about:hover, .login a:hover {
   color: #FAE1DF; }
 
 .outer-container {
@@ -191,14 +191,6 @@ body {
   background: #DE3C4B;
   border-radius: 50%;
   padding: 6em; }
-  @media screen and (max-width: 850px) {
-    #countdown {
-      width: 300px;
-      height: 300px; } }
-  @media screen and (max-width: 428px) {
-    #countdown {
-      width: 320px;
-      height: 320px; } }
   #countdown #counter {
     font-size: 3.157em;
     float: left;
@@ -310,6 +302,15 @@ ul {
           margin-right: 0; }
         ul li:nth-child(1n+1) {
           clear: left; } }
+
+.recipe-list {
+  max-width: 80em;
+  margin-left: auto;
+  margin-right: auto; }
+  .recipe-list::after {
+    clear: both;
+    content: "";
+    display: table; }
 
 .recipes {
   float: left;

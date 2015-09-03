@@ -113,7 +113,7 @@ body {
 
 }
 
-.about:hover, .login:hover {
+.about:hover, .login a:hover {
   color: $white;
 }
 
@@ -130,9 +130,6 @@ body {
   font-size: 3.157em;
   background: $brown;
   color: $white;
-}
-
-.devise-container {
 
 }
 

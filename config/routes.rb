@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'pages/home'
+  get "/login" => "user_sessions#new", as: :login
+  delete "/logout" => "user_sessions#destroy", as: :logout
 
+  resources :users
+  resources :user_sessions, only: [:new, :create]
+  resources :password_resets, only: [:new, :create, :edit, :update]
+
+  get 'pages/home'
   get 'pages/about'
 
-  devise_for :users
   resources :recipes
   root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

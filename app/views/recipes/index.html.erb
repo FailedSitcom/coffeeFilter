@@ -1,10 +1,15 @@
+<% if logged_in? %>
+
 <div class="hero">
   Your Recipes
 </div>
 
+
+<div class="recipe-list">
+
 <ul class="recipes">
 
-    <% @recipes.each do |recipe| %>
+    <% current_user.recipes.each do |recipe| %>
 
       <li>
         <%= link_to(recipe) do %>
@@ -22,13 +27,20 @@
     </li>
 </ul>
 
+</div>
 
+<% end %>
+
+
+<div class="hero">
+  All Recipes
+</div>
+
+<div class="recipe-list">
 
 <ul class="recipes">
 
-  <div class="hero">
-    All Recipes
-  </div>
+
 
     <% @recipes.each do |recipe| %>
 
@@ -43,5 +55,7 @@
     <% end %>
 
 </ul>
+
+<div class="recipe-list">
 
 <br>
